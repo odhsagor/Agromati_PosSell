@@ -157,6 +157,11 @@ foreach ($posCart as $line) { $cartCount += (int)$line['qty']; }
                             <?php endif; ?>
                         </a>
                     </li>
+                    <li class="agri-nav-item" data-page="pos_sales">
+                        <a href="retailer_posSell.php" class="agri-nav-link">
+                            <i class="fas fa-history agri-nav-icon"></i> POS Sales History
+                        </a>
+                    </li>
                     <li class="agri-nav-item">
                         <a href="retailer_logout.php" class="agri-nav-link">
                             <i class="fas fa-sign-out-alt agri-nav-icon"></i> 

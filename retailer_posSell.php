@@ -110,8 +110,18 @@ foreach ($sales as $sale) {
             border-radius: 10rem;
         }
         .summary-card {
-            border-left: 4px solid #0d6efd;
+            border-left: 4px solid #38A169;
         }
+        .btn-outline-custom {
+            border-color: #38A169;
+            color: #38A169;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: #38A169;
+            color: #fff;
+        }
+        
     </style>
 </head>
 <body>
@@ -175,7 +185,7 @@ foreach ($sales as $sale) {
         <div class="container py-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>POS Sales History</h2>
-                <a href="retailer_pos.php" class="btn btn-primary">
+                <a href="retailer_pos.php" class="btn btn-outline-custom">
                     <i class="fas fa-cash-register me-1"></i> New Sale
                 </a>
             </div>
@@ -234,7 +244,7 @@ foreach ($sales as $sale) {
                             <input type="date" class="form-control" id="end_date" name="end_date" value="<?= $end_date ?>">
                         </div>
                         <div class="col-md-2 d-flex align-items-end">
-                            <button type="submit" class="btn btn-primary me-2">Search</button>
+                            <button type="submit" class="btn btn-outline-custom">Search</button>
                             <a href="retailer_posSell.php" class="btn btn-outline-secondary">Clear</a>
                         </div>
                     </form>
@@ -273,7 +283,7 @@ foreach ($sales as $sale) {
                                             <td><?= date('M j, Y g:i A', strtotime($sale['created_at'])) ?></td>
                                             <td class="text-center">
                                                 <a href="retailer_sales_receipt.php?sale_id=<?= $sale['id'] ?>" 
-                                                   class="btn btn-sm btn-outline-primary" title="View Receipt">
+                                                   class="btn btn-outline-custom" title="View Receipt">
                                                     <i class="fas fa-receipt"></i>
                                                 </a>
                                             </td>

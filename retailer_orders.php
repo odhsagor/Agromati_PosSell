@@ -68,10 +68,19 @@ $stmt->close();
                         </a>
                     </li>
                     
-                    <li class="agri-nav-item" data-page="Order view">
-                        <a href="retailer_order_view.php" class="agri-nav-link">
-                            <i class="fas fa-user agri-nav-icon"></i> 
-                            Order view
+                    <li class="agri-nav-item" data-page="pos">
+                    <a href="retailer_pos.php" class="agri-nav-link">
+                        <i class="fas fa-cash-register agri-nav-icon"></i> POS (Sell)
+                    </a>
+                    </li>
+                    <li class="agri-nav-item" data-page="pos_cart">
+                        <a href="pos_cart.php" class="agri-nav-link">
+                            <i class="fas fa-shopping-cart agri-nav-icon"></i> POS Cart
+                        </a>
+                    </li>
+                    <li class="agri-nav-item" data-page="pos_sales">
+                        <a href="retailer_posSell.php" class="agri-nav-link">
+                            <i class="fas fa-history agri-nav-icon"></i> POS Sales History
                         </a>
                     </li>
                     <li class="agri-nav-item">
