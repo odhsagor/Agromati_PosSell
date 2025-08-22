@@ -1,0 +1,186 @@
+:root {
+      --primary: #1A4314;
+      --secondary: #4CAF50;
+      --light-bg: #F8FBF5;
+      --text: #2F4F4F;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    
+    .agri-sidebar {
+    width: 250px;
+    background-color: #1A4314;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 70, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.agri-sidebar-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 20px;
+}
+
+.agri-sidebar-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.agri-sidebar-header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.agri-sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.agri-nav-item {
+    margin-bottom: 5px;
+}
+
+.agri-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.agri-nav-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.agri-nav-item.active .agri-nav-link,
+.agri-nav-link:hover {
+    background-color: #22571D;
+    color: #4CAF50;
+    border-left: 5px solid #4CAF50;
+    padding-left: 15px;
+}
+
+    
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .btn {
+      padding: 8px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    /* Simplified Order Cards */
+    .order-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .order-id {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    
+    .order-date {
+      color: #666;
+      font-size: 0.9em;
+    }
+    
+    .order-status {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      font-weight: 500;
+    }
+    
+    .status-pending { background: #6c757d; color: white; }
+    .status-confirmed { background: #17a2b8; color: white; }
+    .status-shipped { background: #28a745; color: white; }
+    .status-cancelled { background: #dc3545; color: white; }
+    
+    .order-details {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 15px;
+    }
+    
+    .order-actions {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .status-select {
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        padding: 10px;
+      }
+      
+      .order-details {
+        grid-template-columns: 1fr;
+      }
+    }
