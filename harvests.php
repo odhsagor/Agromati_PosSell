@@ -169,9 +169,16 @@ $conn->close();
                             </div>
                             
                             <div class="agri-form-group">
-                                <label><i class="fas fa-leaf"></i> Harvest Type</label>
-                                <input type="text" name="harvest_type" placeholder="e.g., Organic" value="<?= isset($editHarvest) ? htmlspecialchars($editHarvest['harvest_type']) : '' ?>" required>
-                            </div>
+                            <label><i class="fas fa-leaf"></i> Harvest Type</label>
+                            <select name="harvest_type" class="agri-form-select" required>
+                                <option value="">Select Harvest Type</option>
+                                <option value="Cereals" <?= (isset($editHarvest) && $editHarvest['harvest_type'] == 'Cereals') ? 'selected' : '' ?>>Cereals (Wheat, Rice, Maize, etc.)</option>
+                                <option value="Pulses" <?= (isset($editHarvest) && $editHarvest['harvest_type'] == 'Pulses') ? 'selected' : '' ?>>Pulses (Beans, Lentils, Peas, etc.)</option>
+                                <option value="Vegetables" <?= (isset($editHarvest) && $editHarvest['harvest_type'] == 'Vegetables') ? 'selected' : '' ?>>Vegetables</option>
+                                <option value="Fruits" <?= (isset($editHarvest) && $editHarvest['harvest_type'] == 'Fruits') ? 'selected' : '' ?>>Fruits</option>
+                                <option value="Nuts" <?= (isset($editHarvest) && $editHarvest['harvest_type'] == 'Nuts') ? 'selected' : '' ?>>Nuts</option>
+                            </select>
+                        </div>
                             
                             <div class="agri-form-group">
                                 <label><i class="fas fa-dollar-sign"></i> Production Cost</label>

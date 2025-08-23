@@ -4,6 +4,33 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     header("Location: login.php");
     exit();
 }
+
+$db_host = 'localhost';
+$db_user = 'root'; 
+$db_pass = '';
+$db_name = 'agromatiDB';
+
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$userId = $_SESSION['user_id'];
+
+$product_count = 0;
+$stmt = $conn->prepare("SELECT COUNT(*) as count FROM products WHERE user_id = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $product_count = $row['count'];
+}
+
+$stmt->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -95,10 +122,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                     </div>
                     <div class="agri-dashboard-card">
                         <h3 class="agri-card-subtitle">Products Listed</h3>
-                        <p class="agri-card-value">15</p>
+                        <p class="agri-card-value"><?php echo $product_count; ?></p>
                     </div>
                     <div class="agri-dashboard-card">
-                        <h3 class="agri-card-subtitle">Active Warehouses</h3>
+                        <h3 class="agri-card-subtitle">Active wholesaler</h3>
                         <p class="agri-card-value">3</p>
                     </div>
                     <div class="agri-dashboard-card">

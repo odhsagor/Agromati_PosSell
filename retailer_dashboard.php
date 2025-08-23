@@ -158,12 +158,12 @@ if (isset($_SESSION['pos_cart'])) {
                             POS Sales History
                         </a>
                     </li>
-                    <!-- <li class="agri-nav-item" data-page="stock">
+                    <li class="agri-nav-item" data-page="stock">
                         <a href="retailer_stock.php" class="agri-nav-link">
                             <i class="fas fa-warehouse agri-nav-icon"></i> 
                             Stock Movement
                         </a>
-                    </li> -->
+                    </li>
                     <li class="agri-nav-item">
                         <a href="retailer_logout.php" class="agri-nav-link">
                             <i class="fas fa-sign-out-alt agri-nav-icon"></i> 
